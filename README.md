@@ -1,4 +1,4 @@
-# iot-rest
+# iot-rest v0.1
 
 * requirement 
   * nodejs, mongodb
