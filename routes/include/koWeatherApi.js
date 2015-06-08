@@ -44,7 +44,7 @@ var getKoreanWeather = function(top, mid, leaf, callback) {
                 var topObj = JSON.parse(resData);
                 for (var i = 0; i < topObj.length; ++i) {
                     if (topObj[i].value.indexOf(top) >= 0) {
-                        console.log(topObj[i]);
+                        //console.log(topObj[i]);
                         callback(null, topObj[i]);
                         return;
                     }
@@ -62,7 +62,7 @@ var getKoreanWeather = function(top, mid, leaf, callback) {
                 } else {
                     for (var i = 0; i < midObj.length; ++i) {
                         if (midObj[i].value.indexOf(mid) >= 0) {
-                            console.log(midObj[i]);
+                            //console.log(midObj[i]);
                             callback(null, topObj, midObj[i]);
                             return;
                         }
@@ -81,7 +81,7 @@ var getKoreanWeather = function(top, mid, leaf, callback) {
                 } else {
                     for (var i = 0; i < leafObj.length; ++i) {
                         if (leafObj[i].value.indexOf(leaf) >= 0) {
-                            console.log(leafObj[i]);
+                            //console.log(leafObj[i]);
                             callback(null, topObj, midObj, leafObj[i]);
                             return;
                         }
@@ -96,10 +96,11 @@ var getKoreanWeather = function(top, mid, leaf, callback) {
                 xml2js.parseString(resData, function(err, obj) {
                     //var body = obj.wid.body[0];
                     //console.log(body);
+                    //console.log(obj);
                     if (err) {
                         callback(err, topObj, midObj, leafObj, null);
                     } else {
-                        callback(null, topObj, midObj, leafObj, obj.wid.body[0].data[0]);
+                        callback(null, topObj, midObj, leafObj,  obj);
                     }
                 });
             });

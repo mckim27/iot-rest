@@ -9,14 +9,8 @@ require('date-utils');
 
 /****    routes     ****/
 var routes = require('./routes/index');
-//var users = require('./routes/users');
 var present = require('./routes/present');
 var weather = require('./routes/weather');
-/*var temp = require('./routes/temp');
-var hum = require('./routes/hum');
-var thi = require('./routes/thi');
-var di = require('./routes/di');
-var todos = require('./routes/todos');*/
 var condition = require('./routes/condition');
 
 var app = express();
@@ -47,15 +41,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
-//app.use('/users', users);
 app.use('/present/v1', present);
 app.use('/weather/v1', weather);
 app.use('/condition/v1', condition);
-/*app.use('/condition/v1/temp', temp);
-app.use('/condition/v1/hum', hum);
-app.use('/condition/v1/thi', thi);
-app.use('/condition/v1/di', di);*/
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
