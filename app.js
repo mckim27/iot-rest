@@ -28,7 +28,7 @@ mongoose.connect('mongodb://' + mongoHost + '/iot-rest', function(err) {
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 app.set('port', 5000);
 app.listen(app.get('port'));
 

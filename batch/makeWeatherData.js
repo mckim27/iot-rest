@@ -22,7 +22,7 @@ async.waterfall([
     });
   },
   function(resData, callback) {
-    fs.writeFile('../data/wData.json', resData, function (err) {
+    fs.writeFile('/var/www/service/iot-rest/data/wData.json', resData, function (err) {
       if (err) {
         var errMessage = err.message;
         callback(err.message, resData);
